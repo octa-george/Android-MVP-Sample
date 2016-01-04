@@ -1,0 +1,36 @@
+<resources>
+
+    <style name="Base.Theme.CheckYeti" parent="Theme.AppCompat.Light.NoActionBar"/>
+
+    <!--Base application theme, dependent on API level. This theme is replaced-->
+    <!--by AppBaseTheme from res/values-vXX/styles.xml on newer devices.-->
+    <style name="AppBaseTheme" parent="Base.Theme.CheckYeti"/>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:actionMenuTextAppearance">@style/MyMenuTextAppearance</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <!--   theme UI controls like checkboxes and text fields e.g. FloatActionButton -->
+        <item name="colorAccent">#FF4081</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <!-- Title Text Color -->
+        <item name="android:textColorPrimary">@color/text_color_primary</item>
+        <!-- color of the menu overflow icon (three vertical dots) -->
+        <item name="android:textColorSecondary">@color/text_color_secondary</item>
+
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+    </style>
+
+    <style name="MyMenuTextAppearance" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">-4.0dip</item>
+    </style>
+
+</resources>

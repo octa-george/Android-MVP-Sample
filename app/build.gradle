@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "ro.octa.sample"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile supportDependencies.appCompat
+    compile supportDependencies.design
+    compile supportDependencies.recyclerView
+    compile supportDependencies.supportAnnotations
+    
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.jakewharton:butterknife:7.0.0'
+
+    //Dagger 2 configuration
+    compile 'com.google.dagger:dagger:2.1-SNAPSHOT'
+    apt 'com.google.dagger:dagger-compiler:2.1-SNAPSHOT'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+
+    compile project(':sample-api')
+}
